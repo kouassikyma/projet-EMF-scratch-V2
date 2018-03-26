@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<modeleScratch:ProgrammeScratch
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:modeleScratch="http://fr.ubo.mde.kouassi/modeleScratch"
+    xsi:schemaLocation="http://fr.ubo.mde.kouassi/modeleScratch ../model/modeleScratch.ecore"
+    name="ProgrammeTest1"
+    premierbloc="//@contientbloc.0">
+  <contientbloc
+      xsi:type="modeleScratch:Reculer"
+      name="reculer_vitesse_100"
+      suivant="//@contientbloc.1"
+      vitesse="100.0"/>
+  <contientbloc
+      xsi:type="modeleScratch:Attente"
+      name="wait5"
+      duree="5.0"/>
+  <contientbloc
+      xsi:type="modeleScratch:Tourner"
+      name="tourner_gauche"
+      suivant="//@contientbloc.3"
+      vitesse="150.0"
+      sens="gauche"/>
+  <contientbloc
+      xsi:type="modeleScratch:Conditionnelle"
+      name="condition_sur_verite"
+      condition="egale &#xe0; vrai"
+      variables="//@variables_programme.1">
+    <vrai xsi:type="modeleScratch:Avancer"
+        name="avancer_100"
+        vitesse="100.0"/>
+    <faux xsi:type="modeleScratch:Attente"
+        name="wait10"
+        duree="10.0"/>
+  </contientbloc>
+  <variables_programme
+      name="vitesse"
+      valeur="150"/>
+  <variables_programme
+      name="verite"
+      valeur="vrai"/>
+</modeleScratch:ProgrammeScratch>
